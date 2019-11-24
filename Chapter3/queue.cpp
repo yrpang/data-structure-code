@@ -3,8 +3,8 @@
 
 #define INIT_SIZE 100
 #define STACKINCREMENT 10
-#define OK 0
-#define ERROR 1
+#define OK 1
+#define ERROR 0
 #define TRUE 1
 #define FALSE 0
 #define OVERFLOW 1
