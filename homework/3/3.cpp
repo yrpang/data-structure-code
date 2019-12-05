@@ -115,7 +115,14 @@ void DeCode(HFTree ht, char data[], char words[], int n)
             c = ht[c].rchild;
         if (ht[c].lchild == 0)
         {
-            printf("%c", words[c]);
+            if(words[c]==',')
+            {
+                printf(" ");
+            }
+            else{
+                printf("%c", words[c]);
+            }
+            
             res << words[c];
             c = 2 * n - 1;
         }
@@ -160,6 +167,7 @@ int main()
 {
     char choice;
     int n;
+    printf("请首先输入字符集自负总数:");
     cin >> n;
 
     while (true)
