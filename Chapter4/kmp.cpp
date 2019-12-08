@@ -6,7 +6,6 @@ void get_next(char a[], int next[])
 {
     next[1] = 0;
     int i = 1, j = 0;
-    next[1] = 0;
     while (i < strlen(a) - 1)
     {
         if (j == 0 || a[i] == a[j])
@@ -20,23 +19,23 @@ void get_next(char a[], int next[])
     }
 }
 
-int Index_KMP(char S[], char T[], int pos)
+int Index_KMP(char a[], char b[], int pos)
 {
     int i = pos, j = 1;
-    while (i <= strlen(S) - 1 && j <= strlen(T) - 1)
+    while (i <= strlen(a) - 1 && j <= strlen(b) - 1)
     {
-        if (j == 0 || S[i] == T[j]) // 继续比较后继字符
+        if (j == 0 || a[i] == b[j])
         {
             ++i;
             ++j;
         }
         else
-            j = next[j]; // 模式串向右移动
+            j = next[j];
     }
-    if (j > strlen(T) - 1)
-        return i - (strlen(T) - 1); // 匹配成功
+    if (j > strlen(b) - 1)
+        return i - (strlen(b) - 1);
     else
-        return 0;
+        return -2;
 }
 
 int main()
