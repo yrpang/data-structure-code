@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <mm_malloc.h>
-#include<iostream>
+#include <stdlib.h>
+#include <iostream>
 
 int main()
 {
