@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include<queue>
+#include <queue>
 
 using namespace std;
 
@@ -70,7 +70,6 @@ void DFS(Graph &g, int w)
     }
 }
 
-
 queue<int> q;
 void BFS(Graph &g, int w)
 {
@@ -78,20 +77,20 @@ void BFS(Graph &g, int w)
     visit[w] = 1;
     ArcNode *p = g.nlist[w].first;
     q.push(w);
-    while(!q.empty())
+    while (!q.empty())
     {
         w = q.front();
         q.pop();
         p = g.nlist[w].first;
-        while(p)
+        while (p)
         {
-            if(!visit[p->tnum])
+            if (!visit[p->tnum])
             {
                 visit[p->tnum] = 1;
-                cout<<g.nlist[p->tnum].data<<" ";
+                cout << g.nlist[p->tnum].data << " ";
                 q.push(p->tnum);
             }
-            p=p->nextarc;
+            p = p->nextarc;
         }
     }
 }
