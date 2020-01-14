@@ -43,6 +43,16 @@ Status PreOrderTraverse(SqBiTree &T, Status (*visit)(int e), int start, int leng
     return 0;
 }
 
+void PreOrder(SqBiTree t, int i, int length)
+{
+    if(i<length)
+    {
+        cout<<t[i];
+        if(2*i<length) PreOrder(t, 2*i, length);
+        if(2*i+1<length) PreOrder(t, 2*i+1, length);
+    }
+}
+
 int main()
 {
     SqBiTree lalala;

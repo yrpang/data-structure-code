@@ -110,6 +110,6 @@ int main()
     //         s = s->nextarc;
     //     }
     // }
-    DFS(g, 0);
+    BFS(g,0);
     return 0;
 }
